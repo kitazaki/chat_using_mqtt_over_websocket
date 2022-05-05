@@ -25,12 +25,11 @@
       say.value = '';
     });
 
-    var host = "";  // ホスト名を設定する
+    var host = "";
     var clientId = Math.random().toString(36).substring(7);
-    var client = new Paho.MQTT.Client(host, 443, "/mqtt", clientId);  // 接続するポート番号を設定する
-                                                                      // WebSocketのパスを設定する
+    var client = new Paho.MQTT.Client(host, 443, "/mqtt", clientId);
     var connectOptions = {
-      useSSL: true,  // SSLを無効にする場合はfalseを設定する
+      useSSL: true,
       timeout: 3,
       mqttVersion: 4,
       onSuccess: subscribe
